@@ -1,0 +1,132 @@
+.header {
+    padding: 34px 0;
+    background-color: #49BCF1;
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+.burger-btn {
+    display: none;
+    margin-left: auto;
+    padding: 0;
+    font-size: 24px;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+}
+
+.menu {
+    margin-left: auto;
+}
+
+.menu__list {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.menu__item+.menu__item {
+    margin-left: 47px;
+}
+
+.menu__link {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: -0.128571px;
+    color: #FFFFFF;
+    text-decoration: none;
+
+    &--con {
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        padding: 16px 32px;
+        font-family: 'Fraunces';
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 25px;
+        letter-spacing: -0.107143px;
+        color: #24303E;
+        transition: all 0.3s ease;
+        &::before {
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 140px;
+            height: 57px;
+            background-color: #FFFFFF;
+            border-radius: 28px;
+            content: '';
+        }
+        &:hover {
+            color: #FFFFFF;
+        }
+        &:hover::before {
+            opacity: 0.25;
+        }
+    }
+}
+@media only screen and (max-width:576px) {
+    .header__inner {
+        position: relative;
+    }
+    .menu {
+        display: none;
+    }
+    .logo-link {
+        width: 124px;
+        height: 24px;
+    }
+    .burger-btn {
+        z-index: 3;
+        display: block;
+    }
+    .menu--open {
+        position: absolute;
+        top: 90px;
+        right: 0;
+        z-index: 2;
+        display: block;
+        width: 100%;
+        background-color: #FFFCF8;
+    }
+    .menu__list {
+        position: relative;
+        flex-direction: column;
+        padding: 39px 0;
+        &::before {
+            position: absolute;
+            top: -24px;
+            right: 0;
+            border-top: 24px solid transparent;
+            border-right: 24px solid #FFFCF8;
+            border-left: 24px solid transparent;
+            content: '';
+        }
+    }
+    .menu__item + .menu__item {
+        margin-top: 32px;
+        margin-left: 0;
+    }
+    .menu__link {
+        color: #808397;
+
+        &--con {
+            color: #24303E;
+            &::before {
+                background-color: #FBD600;
+            }
+        }
+    }
+}
